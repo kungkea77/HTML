@@ -1,0 +1,37 @@
+class book:
+    def getdata(self):
+        self.name=input("Enter name of the book:")
+        self.n=int(input("Enter the number of author:"))
+        self.authors=[]
+        i=0
+        while i<self.n:
+            author = input(str("Enter the name of the author:"))
+            self.authors.append(author)
+            i+=1
+        self.publisher=input("Enter the name of the publisher:")
+        self.ISBN=input("Enter the ISBN:")
+        self.year=input("Enter year of the publication:")
+    def displaydata(self):
+        print("Name:",self.name)
+        print("Authors:",self.authors)
+        print("Publisher:",self.publisher)
+        print("Year:",self.year)
+        print("ISBN:",self.ISBN)
+
+class text_book(book):
+    def getdata(self):
+        self.course=input("Enter the course:")
+        book.getdata(self)
+    def displaydata(self):
+        book.displaydata(self)
+        print("Course:",self.course)
+
+
+Book1 = book()
+Book1.getdata()
+Book1.displaydata()
+
+text1 = text_book()
+text1.getdata()
+text1.displaydata()
+
